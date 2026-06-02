@@ -38,11 +38,10 @@ ForencAI automates forensic investigation workflows using specialized AI agents 
 Evidence uploaded by investigators is processed through multiple AI agents:
 
 * Evidence Analysis Agent
-* Multimedia Processing Agent
 * Anomaly Detection Agent
 * Summarization Agent
 * Report Generation Agent
-* Workflow Coordinator Agent
+* Timeline Agent
 
 These agents collaborate to transform raw evidence into actionable investigation insights.
 
