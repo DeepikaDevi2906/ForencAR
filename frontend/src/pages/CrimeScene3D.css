@@ -1,0 +1,633 @@
+/* =========================================
+   MAIN WRAPPER
+========================================= */
+
+.crime-upload-screen{
+  position:relative;
+  overflow:hidden;
+
+  min-height:80vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+
+  color:white;
+}
+
+/* GRID TEXTURE */
+.crime-upload-screen::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.04) 1px,
+      transparent 1px
+    );
+
+  background-size:24px 24px;
+
+  opacity:0.08;
+
+  pointer-events:none;
+}
+
+/* AMBIENT GLOW */
+.crime-upload-screen::after{
+  content:"";
+
+  position:absolute;
+
+  top:-200px;
+  left:-200px;
+
+  width:500px;
+  height:500px;
+
+  border-radius:999px;
+
+  background:rgba(34,211,238,0.12);
+
+  filter:blur(120px);
+
+  animation:pulseGlow 5s ease-in-out infinite;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.crime-logo{
+  position:relative;
+  z-index:10;
+
+  text-align:center;
+
+  margin-bottom:50px;
+}
+
+.crime-logo h1{
+  font-size:58px;
+  font-weight:900;
+
+  letter-spacing:-2px;
+
+  background:linear-gradient(
+    to right,
+    #22d3ee,
+    #38bdf8
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.crime-logo p{
+  margin-top:16px;
+
+  color:#94a3b8;
+
+  font-size:18px;
+
+  line-height:32px;
+
+  max-width:700px;
+}
+
+/* =========================================
+   MAIN BOX
+========================================= */
+
+.crime-box{
+  position:relative;
+  z-index:10;
+
+  width:560px;
+
+  overflow:hidden;
+
+  border-radius:36px;
+
+  background:rgba(255,255,255,0.04);
+
+  backdrop-filter:blur(24px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  padding:42px;
+
+  box-shadow:
+    0 20px 100px rgba(0,0,0,0.35);
+}
+
+/* INNER GLOW */
+.crime-box::before{
+  content:"";
+
+  position:absolute;
+
+  top:-100px;
+  right:-100px;
+
+  width:250px;
+  height:250px;
+
+  border-radius:999px;
+
+  background:rgba(34,211,238,0.14);
+
+  filter:blur(90px);
+}
+
+/* =========================================
+   DROP ZONE
+========================================= */
+
+.drop-zone{
+  position:relative;
+  overflow:hidden;
+
+  border:2px dashed rgba(34,211,238,0.25);
+
+  border-radius:30px;
+
+  padding:70px 24px;
+
+  text-align:center;
+
+  cursor:pointer;
+
+  transition:all .35s ease;
+
+  background:rgba(255,255,255,0.03);
+}
+
+.drop-zone:hover{
+  transform:translateY(-4px);
+
+  border-color:rgba(34,211,238,0.6);
+
+  background:rgba(34,211,238,0.06);
+
+  box-shadow:
+    0 0 40px rgba(34,211,238,0.12);
+}
+
+.drop-zone h3{
+  font-size:28px;
+  font-weight:800;
+
+  color:white;
+
+  margin-top:20px;
+}
+
+.drop-zone p{
+  margin-top:14px;
+
+  color:#94a3b8;
+
+  font-size:15px;
+
+  line-height:28px;
+}
+
+/* =========================================
+   DIVIDER
+========================================= */
+
+.divider{
+  position:relative;
+
+  text-align:center;
+
+  margin:32px 0;
+
+  color:#64748b;
+
+  font-size:13px;
+
+  letter-spacing:3px;
+}
+
+.divider::before,
+.divider::after{
+  content:"";
+
+  position:absolute;
+
+  top:50%;
+
+  width:40%;
+
+  height:1px;
+
+  background:rgba(255,255,255,0.08);
+}
+
+.divider::before{
+  left:0;
+}
+
+.divider::after{
+  right:0;
+}
+
+/* =========================================
+   SAMPLE BUTTON
+========================================= */
+
+.sample-btn{
+  width:100%;
+
+  height:64px;
+
+  border:none;
+
+  border-radius:22px;
+
+  background:
+    linear-gradient(
+      to right,
+      #22d3ee,
+      #0ea5e9
+    );
+
+  color:black;
+
+  font-size:16px;
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:all .35s ease;
+
+  box-shadow:
+    0 10px 40px rgba(34,211,238,0.22);
+}
+
+.sample-btn:hover{
+  transform:scale(1.02);
+
+  box-shadow:
+    0 15px 60px rgba(34,211,238,0.32);
+}
+
+/* =========================================
+   LOADING SCREEN
+========================================= */
+
+.loading-screen{
+  position:relative;
+
+  min-height:80vh;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+
+  padding:40px;
+
+  color:white;
+}
+
+.loading-screen h2{
+  font-size:44px;
+  font-weight:900;
+
+  margin-bottom:18px;
+}
+
+.loading-screen p{
+  color:#94a3b8;
+}
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
+
+.progress-bar{
+  width:560px;
+  height:14px;
+
+  margin:34px 0;
+
+  overflow:hidden;
+
+  border-radius:999px;
+
+  background:#111827;
+
+  border:1px solid rgba(255,255,255,0.05);
+}
+
+.progress-fill{
+  height:100%;
+
+  border-radius:999px;
+
+  background:
+    linear-gradient(
+      to right,
+      #22d3ee,
+      #0ea5e9
+    );
+
+  transition:.45s ease;
+
+  box-shadow:
+    0 0 30px rgba(34,211,238,0.4);
+}
+
+/* =========================================
+   LOGS
+========================================= */
+
+.logs{
+  width:560px;
+
+  margin-top:26px;
+
+  border-radius:28px;
+
+  background:rgba(255,255,255,0.04);
+
+  backdrop-filter:blur(24px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  padding:24px;
+
+  color:#94a3b8;
+
+  font-family:monospace;
+  font-size:14px;
+
+  line-height:30px;
+
+  box-shadow:
+    0 20px 80px rgba(0,0,0,0.3);
+}
+
+/* =========================================
+   APP
+========================================= */
+
+.crime-app{
+  position:relative;
+
+  color:white;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.app-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  gap:30px;
+
+  margin-bottom:30px;
+}
+
+.app-header h2{
+  font-size:42px;
+  font-weight:900;
+
+  letter-spacing:-1px;
+}
+
+.app-header p{
+  margin-top:10px;
+
+  color:#94a3b8;
+
+  line-height:30px;
+}
+
+.app-header button{
+  height:60px;
+
+  padding:0 28px;
+
+  border:none;
+
+  border-radius:20px;
+
+  background:
+    linear-gradient(
+      to right,
+      #22d3ee,
+      #0ea5e9
+    );
+
+  color:black;
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.35s ease;
+
+  box-shadow:
+    0 10px 40px rgba(34,211,238,0.25);
+}
+
+.app-header button:hover{
+  transform:scale(1.04);
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+.app-body{
+  display:grid;
+
+  grid-template-columns:1fr 360px;
+
+  gap:26px;
+}
+
+/* =========================================
+   CANVAS AREA
+========================================= */
+
+.canvas-area{
+  position:relative;
+  overflow:hidden;
+
+  border-radius:36px;
+
+  background:rgba(255,255,255,0.04);
+
+  backdrop-filter:blur(24px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+    0 20px 100px rgba(0,0,0,0.35);
+}
+
+.canvas-area::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px
+    );
+
+  background-size:24px 24px;
+
+  pointer-events:none;
+}
+
+.vr-canvas{
+  width:100%;
+  height:750px;
+
+  display:block;
+
+  background:#020617;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.sidebar{
+  display:flex;
+  flex-direction:column;
+
+  gap:24px;
+}
+
+/* =========================================
+   PANEL
+========================================= */
+
+.panel{
+  position:relative;
+  overflow:hidden;
+
+  border-radius:32px;
+
+  background:rgba(255,255,255,0.04);
+
+  backdrop-filter:blur(24px);
+
+  border:1px solid rgba(255,255,255,0.08);
+
+  padding:28px;
+
+  box-shadow:
+    0 20px 80px rgba(0,0,0,0.3);
+}
+
+.panel::before{
+  content:"";
+
+  position:absolute;
+
+  top:-80px;
+  right:-80px;
+
+  width:180px;
+  height:180px;
+
+  border-radius:999px;
+
+  background:rgba(34,211,238,0.1);
+
+  filter:blur(80px);
+}
+
+.panel h3{
+  position:relative;
+  z-index:10;
+
+  font-size:28px;
+  font-weight:900;
+
+  margin-bottom:24px;
+}
+
+/* =========================================
+   ITEMS
+========================================= */
+
+.evidence-item,
+.timeline-item{
+  position:relative;
+  overflow:hidden;
+
+  padding:18px;
+
+  border-radius:22px;
+
+  background:rgba(255,255,255,0.03);
+
+  border:1px solid rgba(255,255,255,0.06);
+
+  margin-bottom:16px;
+
+  cursor:pointer;
+
+  transition:all .35s ease;
+}
+
+.evidence-item:hover,
+.timeline-item:hover{
+  transform:translateY(-3px);
+
+  border-color:rgba(34,211,238,0.5);
+
+  background:rgba(34,211,238,0.05);
+}
+
+.evidence-item.active,
+.timeline-item.active{
+  background:rgba(34,211,238,0.08);
+
+  border-color:#22d3ee;
+
+  box-shadow:
+    0 0 30px rgba(34,211,238,0.15);
+}
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes pulseGlow{
+  0%{
+    transform:scale(1);
+    opacity:0.6;
+  }
+
+  50%{
+    transform:scale(1.1);
+    opacity:1;
+  }
+
+  100%{
+    transform:scale(1);
+    opacity:0.6;
+  }
+}
