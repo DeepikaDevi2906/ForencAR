@@ -75,4 +75,11 @@ These agents collaborate to transform raw evidence into actionable investigation
 * File Upload Management
 * Evidence Repository
 * Investigation Report Storage
- collaborative investigations
+
+##Contributors
+
+*Deepika Devi P
+*Priyadharshini K
+*G S Shamrutha
+*Kasturi E
+
