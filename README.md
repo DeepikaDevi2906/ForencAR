@@ -75,11 +75,12 @@ These agents collaborate to transform raw evidence into actionable investigation
 * File Upload Management
 * Evidence Repository
 * Investigation Report Storage
+---
 
-###Contributors
+### Contributors
 
-*Deepika Devi P
-*Priyadharshini K
-*G S Shamrutha
-*Kasturi E
+* Deepika Devi P
+* Priyadharshini K
+* G S Shamrutha
+* Kasturi E
 
