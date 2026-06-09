@@ -81,6 +81,6 @@ These agents collaborate to transform raw evidence into actionable investigation
 
 * Deepika Devi P
 * Priyadharshini K
-* G S Shamrutha
+* G S Shamritha
 * Kasturi E
 
